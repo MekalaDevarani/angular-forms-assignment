@@ -1,0 +1,114 @@
+<h5>Personal Information Form</h5>
+<form class="border border-dark p-3 mb-3">
+  <div class="header"></div>
+    
+  <div class="row mb-2">
+   <div class="col ">
+       <label for="firstname" class="form-label">FirstName*</label>
+       <input type="text" class="form-control" placeholder="enter firstname" id="firstname">
+    </div>
+    <div class="col mb-2">
+      <label for="lastname" class="form-label">LastName*</label>
+      <input type="text" class="form-control" placeholder="enter lastname" id="lastname">
+    </div>
+  </div>
+
+  <div class="row mb-2 ">
+    <div class="col  ">
+        <div class="m-1">Gender*</div>
+        <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" name="gender" id="male">
+        <label for="male" class="form-check-label">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" name="gender" id="female">
+          <label for="female" class="form-check-label">Female</label>
+          </div>
+     </div>
+     <div class="col mb-2">
+       <label for="address" class="form-label">Address*</label>
+       <input type="text" class="form-control" id="address">
+     </div>
+   </div>
+
+   <div class="row mb-2">
+    <div class="col ">
+        <label for="city" class="form-label">City*</label>
+        <input type="text" class="form-control" id="city">
+     </div>
+     <div class="col mb-2">
+       <label for="state" class="form-label">State*</label>
+       <input type="text" class="form-control" id="state">
+     </div>
+   </div>
+
+
+  <div class="row mb-2">
+   <div class="col ">
+       <label for="zip" class="form-label">Zip*</label>
+       <input type="zip" class="form-control" id="zip">
+    </div>
+    <div class="col mb-2">
+      <label for="phone" class="form-label">Phone*</label>
+      <input type="number" class="form-control" id="phone">
+    </div>
+  </div>
+   
+
+   <div class="row mb-2">
+    <div class="col ">
+        <label for="Email" class="form-label">Email*</label>
+        <input type="text" formControlName="Email" class="form-input">
+        <div *ngIf="f.Email.touched && f.Email.invalid" class="text-danger">
+          <div *ngIf ="f.Email.errors?.required">Email is reqiured</div>
+          <!-- <div *ngIf="f.Email.errors?.email">Email must be a valid email address</div> -->
+          <div *ngIf="f.Email.errors?.pattern">
+            Email Pattern Is Invalid
+          </div>
+        </div>
+     </div>
+     <div class="col mb-2">
+       <label for="date of birth" class="form-label">Date of birth*</label>
+       <input type="date" formControlName="Dateofbirth" class="form-input" name="dob" [max]="getToday()">     
+   </div>
+   </div>
+
+   <div class="row mb-2">
+    <div class="col ">
+        <label for="place of birth" class="form-label">Plcae of birth*</label>
+        <input type="text" class="form-control" id="plce of birth">
+     </div>
+     <div class="col mb-2">
+       <label for="longest place resided" class="form-label">Longest place resided*</label>
+       <input type="text" class="form-control" id="longest place resided">
+     </div>
+   </div>
+
+   <div class="row mb-2">
+    <div class="col ">
+        <label for="# of years there" class="form-label"># of years there*</label>
+        <input type="text" class="form-control" id="# of years there">
+     </div>
+     <div class="col mb-2">
+       <label for="marital status" class="form-label">Marital status*</label>
+       <select name="maritalstatus" formControlName="maritalstatus" id="maritalstatus" class="maritaloptions">
+        <option value="Single">Select an option</option>
+        <option value="Single">Single</option>
+      <option value="Married">Married</option>
+      <option value="Widowed">Widowed</option>
+      <option value="Divorced">Divorced</option>
+      </select>     </div>
+   </div>
+   <div class="row mb-2 ">
+    <div class="col-6 offset-3 d-grid  ">
+        <button (click)="printPage()">print</button>
+     </div>
+   </div>
+   
+
+
+</form>
+
+
+
+
